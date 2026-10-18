@@ -1,0 +1,106 @@
+TAP version 13
+# Subtest: T-A-14 conclude-it on an open card: same filename, status concluded, one INDEX row, ended_at set
+ok 1 - T-A-14 conclude-it on an open card: same filename, status concluded, one INDEX row, ended_at set
+  ---
+  duration_ms: 196.422041
+  type: 'test'
+  ...
+# Subtest: T-A-14b shipped + implementation extended with what the session touched
+ok 2 - T-A-14b shipped + implementation extended with what the session touched
+  ---
+  duration_ms: 167.132709
+  type: 'test'
+  ...
+# Subtest: T-A-15 no open card: card written as before; implementation only if derivable
+ok 3 - T-A-15 no open card: card written as before; implementation only if derivable
+  ---
+  duration_ms: 159.827125
+  type: 'test'
+  ...
+# Subtest: T-A-13 (conclude-it reader) a legacy card without implementation and with a stray colon reads without error
+ok 4 - T-A-13 (conclude-it reader) a legacy card without implementation and with a stray colon reads without error
+  ---
+  duration_ms: 162.755541
+  type: 'test'
+  ...
+# Subtest: CLOSE-01 all tasks verified: close moves the folder to 0-done and ends every open session
+ok 5 - CLOSE-01 all tasks verified: close moves the folder to 0-done and ends every open session
+  ---
+  duration_ms: 550.082042
+  type: 'test'
+  ...
+# Subtest: CLOSE-02 one task unverified and no owner note: refused, board and sessions byte-identical
+ok 6 - CLOSE-02 one task unverified and no owner note: refused, board and sessions byte-identical
+  ---
+  duration_ms: 221.763583
+  type: 'test'
+  ...
+# Subtest: CLOSE-03 unverified with an owner note: closes knowingly, moves, ends sessions, history records the note
+ok 7 - CLOSE-03 unverified with an owner note: closes knowingly, moves, ends sessions, history records the note
+  ---
+  duration_ms: 300.116541
+  type: 'test'
+  ...
+# Subtest: CLOSE-04 an empty board (created by init-it, no tasks) is not "all verified" without an owner note
+ok 8 - CLOSE-04 an empty board (created by init-it, no tasks) is not "all verified" without an owner note
+  ---
+  duration_ms: 103.279625
+  type: 'test'
+  ...
+# Subtest: CLOSE-05 after close, the open card upgrade links the moved 0-done path
+ok 9 - CLOSE-05 after close, the open card upgrade links the moved 0-done path
+  ---
+  duration_ms: 471.741291
+  type: 'test'
+  ...
+# Subtest: ADV-LC-01 killed after the card temp write: open card + INDEX byte-identical, dead lock reclaimed, re-run heals, no residue
+ok 10 - ADV-LC-01 killed after the card temp write: open card + INDEX byte-identical, dead lock reclaimed, re-run heals, no residue
+  ---
+  duration_ms: 188.973041
+  type: 'test'
+  ...
+# Subtest: ADV-LC-02 open card without implementation, BOM + CRLF, stray colons, junk siblings: upgraded in place
+ok 11 - ADV-LC-02 open card without implementation, BOM + CRLF, stray colons, junk siblings: upgraded in place
+  ---
+  duration_ms: 163.463166
+  type: 'test'
+  ...
+# Subtest: ADV-LC-03 a summary quoting the open card link never makes the upsert overwrite that other row
+ok 12 - ADV-LC-03 a summary quoting the open card link never makes the upsert overwrite that other row
+  ---
+  duration_ms: 167.124125
+  type: 'test'
+  ...
+# Subtest: ADV-LC-04 no open card, same date + session name as another session card: the other card is not clobbered
+ok 13 - ADV-LC-04 no open card, same date + session name as another session card: the other card is not clobbered
+  ---
+  duration_ms: 131.824542
+  type: 'test'
+  ...
+# Subtest: ADV-LC-05 newlines in --tags cannot forge header fields; traversal in alias/session is refused
+ok 14 - ADV-LC-05 newlines in --tags cannot forge header fields; traversal in alias/session is refused
+  ---
+  duration_ms: 348.42825
+  type: 'test'
+  ...
+# Subtest: ADV-LC-06 parallel upgrades of 6 open cards: all concluded, one row each, every ended_at set, no residue
+ok 15 - ADV-LC-06 parallel upgrades of 6 open cards: all concluded, one row each, every ended_at set, no residue
+  ---
+  duration_ms: 573.570625
+  type: 'test'
+  ...
+# Subtest: ADV-LC-07 a closed (frozen) status.json: the card upgrades, status.json is left byte-identical with a warning
+ok 16 - ADV-LC-07 a closed (frozen) status.json: the card upgrades, status.json is left byte-identical with a warning
+  ---
+  duration_ms: 148.191875
+  type: 'test'
+  ...
+1..16
+# tests 16
+# suites 0
+# pass 16
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 4090.657292

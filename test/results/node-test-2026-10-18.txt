@@ -1,0 +1,256 @@
+TAP version 13
+# Subtest: ADV-01a 12 parallel init-its, different ids, two impls (one needs --create): nothing lost, no residue
+ok 1 - ADV-01a 12 parallel init-its, different ids, two impls (one needs --create): nothing lost, no residue
+  ---
+  duration_ms: 603.019833
+  type: 'test'
+  ...
+# Subtest: ADV-01b the same session id racing itself (8 procs, mixed roles): one entry, one card, one row
+ok 2 - ADV-01b the same session id racing itself (8 procs, mixed roles): one entry, one card, one row
+  ---
+  duration_ms: 400.081083
+  type: 'test'
+  ...
+# Subtest: ADV-01c init-it racing ledger-card upgrade: every card keeps exactly one row, status.json valid
+ok 3 - ADV-01c init-it racing ledger-card upgrade: every card keeps exactly one row, status.json valid
+  ---
+  duration_ms: 840.597541
+  type: 'test'
+  ...
+# Subtest: ADV-02a status-write killed after tmp: status.json intact, its lock does not wedge, re-run heals with no residue
+ok 4 - ADV-02a status-write killed after tmp: status.json intact, its lock does not wedge, re-run heals with no residue
+  ---
+  duration_ms: 166.291333
+  type: 'test'
+  ...
+# Subtest: ADV-02b init-it killed at after-card-tmp: old card/INDEX intact, dead-holder lock reclaimed, re-run heals, no tmp left
+ok 5 - ADV-02b init-it killed at after-card-tmp: old card/INDEX intact, dead-holder lock reclaimed, re-run heals, no tmp left
+  ---
+  duration_ms: 228.821042
+  type: 'test'
+  ...
+# Subtest: ADV-02b init-it killed at after-index-tmp: old card/INDEX intact, dead-holder lock reclaimed, re-run heals, no tmp left
+ok 6 - ADV-02b init-it killed at after-index-tmp: old card/INDEX intact, dead-holder lock reclaimed, re-run heals, no tmp left
+  ---
+  duration_ms: 235.563875
+  type: 'test'
+  ...
+# Subtest: ADV-02c a crash on a fresh session at after-index-tmp: card exists without a row; the re-run adds exactly one row
+ok 7 - ADV-02c a crash on a fresh session at after-index-tmp: card exists without a row; the re-run adds exactly one row
+  ---
+  duration_ms: 149.032041
+  type: 'test'
+  ...
+# Subtest: ADV-02d stale ledger locks: an old lock held by a live unrelated pid, and an empty old lock, are both reclaimed
+ok 8 - ADV-02d stale ledger locks: an old lock held by a live unrelated pid, and an empty old lock, are both reclaimed
+  ---
+  duration_ms: 161.463958
+  type: 'test'
+  ...
+# Subtest: ADV-03 legacy cards without implementation (open and closed, no frontmatter, junk) are scanned without error
+ok 9 - ADV-03 legacy cards without implementation (open and closed, no frontmatter, junk) are scanned without error
+  ---
+  duration_ms: 75.548208
+  type: 'test'
+  ...
+# Subtest: ADV-04a a BOM + CRLF open card with stray colons and malformed lines is found and rewritten in place
+ok 10 - ADV-04a a BOM + CRLF open card with stray colons and malformed lines is found and rewritten in place
+  ---
+  duration_ms: 75.881292
+  type: 'test'
+  ...
+# Subtest: ADV-04b a session id that would forge header lines or be cut as a comment is refused, nothing written
+ok 11 - ADV-04b a session id that would forge header lines or be cut as a comment is refused, nothing written
+  ---
+  duration_ms: 182.178916
+  type: 'test'
+  ...
+# Subtest: ADV-05a old layout (caps, long separators, prefixed links, CRLF, no trailing newline): legacy lines kept, one new table
+ok 12 - ADV-05a old layout (caps, long separators, prefixed links, CRLF, no trailing newline): legacy lines kept, one new table
+  ---
+  duration_ms: 0.903208
+  type: 'test'
+  ...
+# Subtest: ADV-05b a summary that quotes another card link never makes the upsert hit that row
+ok 13 - ADV-05b a summary that quotes another card link never makes the upsert hit that row
+  ---
+  duration_ms: 0.114125
+  type: 'test'
+  ...
+# Subtest: ADV-05c no table at all, and an Impl table below a legacy table: no second Impl header
+ok 14 - ADV-05c no table at all, and an Impl table below a legacy table: no second Impl header
+  ---
+  duration_ms: 0.123917
+  type: 'test'
+  ...
+# Subtest: ADV-05d end to end on a CRLF INDEX with no trailing newline: legacy rows byte for byte, CRLF kept
+ok 15 - ADV-05d end to end on a CRLF INDEX with no trailing newline: legacy rows byte for byte, CRLF kept
+  ---
+  duration_ms: 171.996083
+  type: 'test'
+  ...
+# Subtest: ADV-06 path traversal in names and aliases is refused; nothing is written outside the repo
+ok 16 - ADV-06 path traversal in names and aliases is refused; nothing is written outside the repo
+  ---
+  duration_ms: 407.48375
+  type: 'test'
+  ...
+# Subtest: ADV-07 --none with a name is refused; --none twice is idempotent; unknown id twice is idempotent
+ok 17 - ADV-07 --none with a name is refused; --none twice is idempotent; unknown id twice is idempotent
+  ---
+  duration_ms: 260.415375
+  type: 'test'
+  ...
+# Subtest: ADV-08 a closed (frozen) status.json is refused by the writer: file byte-identical, no card, no row
+ok 18 - ADV-08 a closed (frozen) status.json is refused by the writer: file byte-identical, no card, no row
+  ---
+  duration_ms: 119.861542
+  type: 'test'
+  ...
+# Subtest: ADV-09 an empty 0-done bucket and a 0-done folder named like a live one: live wins, parked needs --allow-done
+ok 19 - ADV-09 an empty 0-done bucket and a 0-done folder named like a live one: live wins, parked needs --allow-done
+  ---
+  duration_ms: 137.645959
+  type: 'test'
+  ...
+# Subtest: ADV-10 very long values: a 5000-char id is idempotent; a too-long card name fails loud with status.json still valid
+ok 20 - ADV-10 very long values: a 5000-char id is idempotent; a too-long card name fails loud with status.json still valid
+  ---
+  duration_ms: 256.926208
+  type: 'test'
+  ...
+# Subtest: T-A-01 register on alpha --role build adds one build session with started_at
+ok 21 - T-A-01 register on alpha --role build adds one build session with started_at
+  ---
+  duration_ms: 326.673
+  type: 'test'
+  ...
+# Subtest: T-A-02 running twice keeps one entry, one open card, one INDEX row
+ok 22 - T-A-02 running twice keeps one entry, one open card, one INDEX row
+  ---
+  duration_ms: 167.983875
+  type: 'test'
+  ...
+# Subtest: T-A-03 same session re-run with --role review updates the role, no duplicate
+ok 23 - T-A-03 same session re-run with --role review updates the role, no duplicate
+  ---
+  duration_ms: 185.601459
+  type: 'test'
+  ...
+# Subtest: T-A-04 unknown name exits 2 and lists the valid names on stderr
+ok 24 - T-A-04 unknown name exits 2 and lists the valid names on stderr
+  ---
+  duration_ms: 32.868792
+  type: 'test'
+  ...
+# Subtest: T-A-05 a 0-done (or 1-backlog) target exits 2 unless --allow-done
+ok 25 - T-A-05 a 0-done (or 1-backlog) target exits 2 unless --allow-done
+  ---
+  duration_ms: 185.048542
+  type: 'test'
+  ...
+# Subtest: T-A-06 missing session id writes "unknown", warns, exits 0
+ok 26 - T-A-06 missing session id writes "unknown", warns, exits 0
+  ---
+  duration_ms: 83.575334
+  type: 'test'
+  ...
+# Subtest: T-A-06b missing alias writes "unknown" and warns; never guesses from the default config dir
+ok 27 - T-A-06b missing alias writes "unknown" and warns; never guesses from the default config dir
+  ---
+  duration_ms: 235.403625
+  type: 'test'
+  ...
+# Subtest: T-A-07 missing status.json is created minimal (schema 1, no waves, created_by init-it)
+ok 28 - T-A-07 missing status.json is created minimal (schema 1, no waves, created_by init-it)
+  ---
+  duration_ms: 127.848791
+  type: 'test'
+  ...
+# Subtest: T-A-08 invalid JSON exits 3, leaves the file untouched and names it
+ok 29 - T-A-08 invalid JSON exits 3, leaves the file untouched and names it
+  ---
+  duration_ms: 30.972542
+  type: 'test'
+  ...
+# Subtest: T-A-09 kill after the temp write, before rename: status.json byte-identical, valid, no card
+ok 30 - T-A-09 kill after the temp write, before rename: status.json byte-identical, valid, no card
+  ---
+  duration_ms: 233.823667
+  type: 'test'
+  ...
+# Subtest: T-A-09b kill between card temp write and rename: session list valid, re-run heals card + row
+ok 31 - T-A-09b kill between card temp write and rename: session list valid, re-run heals card + row
+  ---
+  duration_ms: 159.640542
+  type: 'test'
+  ...
+# Subtest: T-A-10 parallel calls with different session ids all land; status.json and INDEX stay valid
+ok 32 - T-A-10 parallel calls with different session ids all land; status.json and INDEX stay valid
+  ---
+  duration_ms: 267.762792
+  type: 'test'
+  ...
+# Subtest: T-A-11 open card header has implementation: [alpha], status: open and every legacy field
+ok 33 - T-A-11 open card header has implementation: [alpha], status: open and every legacy field
+  ---
+  duration_ms: 77.01775
+  type: 'test'
+  ...
+# Subtest: T-A-12 INDEX: new row has the Impl column; the 3 legacy rows are unchanged byte for byte
+ok 34 - T-A-12 INDEX: new row has the Impl column; the 3 legacy rows are unchanged byte for byte
+  ---
+  duration_ms: 155.23025
+  type: 'test'
+  ...
+# Subtest: T-A-12b an old-layout INDEX (capitalised header, long separators, .agents/history link prefix) is kept byte for byte
+ok 35 - T-A-12b an old-layout INDEX (capitalised header, long separators, .agents/history link prefix) is kept byte for byte
+  ---
+  duration_ms: 0.432834
+  type: 'test'
+  ...
+# Subtest: T-A-13 a legacy card without implementation reads as unknown and never throws
+ok 36 - T-A-13 a legacy card without implementation reads as unknown and never throws
+  ---
+  duration_ms: 0.400959
+  type: 'test'
+  ...
+# Subtest: T-A-16 mod fixture: an open card 30 h old with no conclude reports "stale open"
+ok 37 - T-A-16 mod fixture: an open card 30 h old with no conclude reports "stale open"
+  ---
+  duration_ms: 0.570208
+  type: 'test'
+  ...
+# Subtest: T-A-17 --none writes no status.json and a card with implementation: []
+ok 38 - T-A-17 --none writes no status.json and a card with implementation: []
+  ---
+  duration_ms: 39.540375
+  type: 'test'
+  ...
+# Subtest: T-A-18 --rename on a host without rename support: exit 0, one "rename skipped: host" line
+ok 39 - T-A-18 --rename on a host without rename support: exit 0, one "rename skipped: host" line
+  ---
+  duration_ms: 80.246
+  type: 'test'
+  ...
+# Subtest: T-A-19 the init-it repo makes no network and no model calls
+ok 40 - T-A-19 the init-it repo makes no network and no model calls
+  ---
+  duration_ms: 1.671291
+  type: 'test'
+  ...
+# Subtest: T-A-20 sibling diffs: session-init untouched, plan-it changed only in the listed file
+ok 41 - T-A-20 sibling diffs: session-init untouched, plan-it changed only in the listed file
+  ---
+  duration_ms: 0.362416
+  type: 'test'
+  ...
+1..41
+# tests 41
+# suites 0
+# pass 41
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 4515.046708

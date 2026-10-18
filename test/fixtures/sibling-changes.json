@@ -1,0 +1,15 @@
+{
+  "recorded": "2026-10-18, gh api repos/DevOtts/<repo>/compare/main...<branch> .files[].filename",
+  "prs": {
+    "build-it": "https://github.com/DevOtts/build-it/pull/21 (feat/init-it-support @ 3355dc26)",
+    "review-it": "https://github.com/DevOtts/review-it/pull/6 (feat/init-it-register @ 0579448d)",
+    "plan-it": "https://github.com/DevOtts/plan-it/pull/9 (feat/init-it-handoff @ 72e6965a)",
+    "conclude-it": "https://github.com/DevOtts/conclude-it/pull/2 (feat/init-it-open-cards @ c0894de3)"
+  },
+  "repos": {
+    "build-it": ["plugins/build-it/scripts/status/README.md", "plugins/build-it/scripts/status/status-write.mjs", "plugins/build-it/skills/build-it/SKILL.md", "tests/status/session-init-it.test.mjs"],
+    "review-it": ["SKILL.md", "plugins/review-it/skills/review-it/SKILL.md"],
+    "plan-it": ["SKILL.md", "plugins/plan-it/skills/plan-it/SKILL.md"],
+    "conclude-it": ["plugins/conclude-it/skills/conclude-it/SKILL.md", "plugins/conclude-it/skills/conclude-it/scripts/ledger-card.mjs", "plugins/conclude-it/skills/conclude-it/scripts/ledger-card.test.mjs"]
+  }
+}

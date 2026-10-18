@@ -1,0 +1,13 @@
+{
+  "name": "init-it",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Register a Claude Code session against an implementation. Zero dependencies.",
+  "type": "module",
+  "engines": { "node": ">=18" },
+  "scripts": {
+    "test": "node --test test/init-it.test.mjs test/adversarial.test.mjs"
+  },
+  "author": "DevOtts (https://github.com/DevOtts)",
+  "license": "MIT"
+}

@@ -1,0 +1,24 @@
+{
+  "$schema": "https://json.schemastore.org/claude-code-marketplace.json",
+  "name": "devotts",
+  "owner": {
+    "name": "DevOtts",
+    "url": "https://github.com/DevOtts"
+  },
+  "description": "DevOtts marketplace for Claude Code plugins. Add this repo, then install init-it (register a session against an implementation). Shares the devotts namespace with plan-it, build-it, review-it, conclude-it and prompt-it.",
+  "plugins": [
+    {
+      "name": "init-it",
+      "source": "./plugins/init-it",
+      "version": "0.1.0",
+      "description": "Register this session against docs/implementations/<name>: status.json sessions[] entry (via build-it status-write), open ledger card, INDEX row. Deterministic, idempotent, no network.",
+      "author": {
+        "name": "DevOtts",
+        "url": "https://github.com/DevOtts"
+      },
+      "homepage": "https://github.com/DevOtts/init-it",
+      "license": "MIT",
+      "keywords": ["session", "registration", "status", "ledger", "claude-code"]
+    }
+  ]
+}

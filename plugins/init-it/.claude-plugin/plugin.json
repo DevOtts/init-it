@@ -1,0 +1,13 @@
+{
+  "name": "init-it",
+  "description": "Register a Claude Code session against an implementation (docs/implementations/<name>): one status.json sessions[] entry via build-it's status-write, an open ledger card and one INDEX row. Deterministic script, idempotent, zero dependencies, no network or model calls.",
+  "version": "0.1.0",
+  "author": {
+    "name": "DevOtts",
+    "url": "https://github.com/DevOtts"
+  },
+  "homepage": "https://github.com/DevOtts/init-it",
+  "repository": "https://github.com/DevOtts/init-it",
+  "license": "MIT",
+  "keywords": ["session", "registration", "status", "ledger", "do-it", "claude-code"]
+}

@@ -1,0 +1,46 @@
+{
+  "schema": 1,
+  "implementation": "old-impl",
+  "title": "Old",
+  "updated_at": "2026-10-01T12:00:00Z",
+  "approximate": false,
+  "closed": false,
+  "waves": [
+    {
+      "id": "W1",
+      "title": "Wave one",
+      "tasks": [
+        {
+          "id": "A-01",
+          "title": "First",
+          "status": "not-started",
+          "blocked_on": null,
+          "evidence": null,
+          "owner": null,
+          "updated_at": "2026-10-01T12:00:00Z",
+          "note": null
+        },
+        {
+          "id": "A-02",
+          "title": "Second",
+          "status": "not-started",
+          "blocked_on": null,
+          "evidence": null,
+          "owner": null,
+          "updated_at": "2026-10-01T12:00:00Z",
+          "note": null
+        }
+      ]
+    }
+  ],
+  "sessions": [],
+  "pieces": [
+    {
+      "piece": "Core",
+      "status": "not-started",
+      "blocked_on": null,
+      "whats_left": "Everything"
+    }
+  ],
+  "history": []
+}
