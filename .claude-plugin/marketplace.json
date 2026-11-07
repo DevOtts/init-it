@@ -1,11 +1,11 @@
 {
   "$schema": "https://json.schemastore.org/claude-code-marketplace.json",
-  "name": "devotts",
+  "name": "init-it",
   "owner": {
     "name": "DevOtts",
     "url": "https://github.com/DevOtts"
   },
-  "description": "DevOtts marketplace for Claude Code plugins. Add this repo, then install init-it (register a session against an implementation). Shares the devotts namespace with plan-it, build-it, review-it, conclude-it and prompt-it.",
+  "description": "DevOtts marketplace for Claude Code plugins. Add this repo, then install init-it (register a session against an implementation). Its own marketplace name, so it can be added next to the devotts hub (do-it) without a clash.",
   "plugins": [
     {
       "name": "init-it",

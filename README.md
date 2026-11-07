@@ -17,6 +17,15 @@ What one run writes:
 
 `/conclude-it` Step 2.5 later rewrites that same card in place and sets `ended_at` (conclude-it's `scripts/ledger-card.mjs`). build-it (run start) and review-it (preflight) call this script by path with `--role build` / `--role review`. plan-it prints `run /init-it <name> --role build` in its hand-off.
 
+## Install
+
+```
+/plugin marketplace add DevOtts/init-it
+/plugin install init-it@init-it
+```
+
+init-it needs build-it (its `status-write.mjs` is the only writer of `status.json`). do-it lists init-it as an optional companion (`required: false`).
+
 ## Layout
 
 | Path | What |
